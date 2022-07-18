@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -f ".init_done" ]; then
+if [ -f ".maria_up" ]; then
     echo "init done"
     /usr/bin/mysqld
 else
@@ -11,7 +11,7 @@ else
 	sleep 5
     mariadb -u root < init.sql
     echo "Init setup OK."
-    touch .init_done
+    touch .maria_up
     echo "Removing init.sql."
 	rm init.sql
     echo "Mariadb starting ..."
